@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Taco Mac &amp; Cheese is Coming to Costco — Counter</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@600;700&family=Kumbh+Sans:wght@400;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--magenta:#FD21B2;--orange:#FF761C;--tang:#FFB21C;--yellow:#FFE500;--red:#FF422E;--lime:#ADE830;--cyan:#09EFEF}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Kumbh Sans',system-ui,sans-serif;color:#000;background:#fff;-webkit-font-smoothing:antialiased}
+h1,h2{font-family:'Jost',sans-serif;font-weight:700;line-height:1.05;letter-spacing:-.01em}
+.hl{background:var(--yellow);padding:.04em .14em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.hl5{background:var(--lime);padding:.04em .14em;white-space:nowrap}
+.hero{background:var(--magenta);padding:16px 16px 44px}
+.logo{display:inline-block;background:#000;color:#fff;font-family:'Jost',sans-serif;font-weight:700;font-size:20px;line-height:1;padding:10px 14px 12px;letter-spacing:.02em}
+.eyebrow{font-family:'Space Mono',monospace;font-weight:700;font-size:10px;letter-spacing:.18em;margin-top:14px}
+.hero h1{font-size:clamp(27px,7.4vw,32px);margin-top:8px}
+.sub{font-size:15px;line-height:1.4;margin-top:10px}
+.card{background:#fff;border-radius:18px;padding:16px;margin-top:12px;box-shadow:0 10px 30px rgba(0,0,0,.16)}
+.helper{font-size:13px;line-height:1.4;margin-bottom:10px}
+.lbl{display:block;font-family:'Space Mono',monospace;font-weight:700;font-size:11px;letter-spacing:.16em;margin-bottom:6px}
+input{width:100%;min-height:52px;border:2px solid #000;border-radius:10px;padding:0 14px;font-family:'Space Mono',monospace;font-size:16px;background:#fff;color:#000}
+input::placeholder{color:rgba(0,0,0,.35)}
+input:focus-visible,.btn:focus-visible{outline:3px solid #000;outline-offset:2px}
+.field{margin-bottom:12px}
+.field.bad input{border-color:var(--red)}
+.err{display:none;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;margin-top:6px}
+.field.bad .err{display:block}
+.btn{display:block;width:100%;min-height:54px;border:0;border-radius:999px;background:#000;color:#fff;font-family:'Jost',sans-serif;font-weight:700;font-size:17px;letter-spacing:.02em;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease}
+.btn:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(0,0,0,.25)}
+.clar{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;text-align:center;margin-top:10px}
+.tel-wrap{position:relative}
+.flag{position:absolute;left:14px;top:50%;transform:translateY(-50%);display:flex;align-items:center;gap:5px;pointer-events:none}
+.tel-wrap input{padding-left:62px}
+.micro{font-size:12px;line-height:1.45;margin-top:8px}
+#step1{transition:opacity .24s ease}
+#step2 h2{font-size:23px;line-height:1.12}
+.clubline{font-size:14px;line-height:1.5;margin-top:8px}
+#optForm{margin-top:14px}
+#optForm .helper{margin-bottom:14px}
+.fade{opacity:0;transform:translateY(12px);transition:opacity .45s ease,transform .45s ease}
+.fade.show{opacity:1;transform:none}
+#result{transition:opacity .24s ease}
+.slist{font-family:'Space Mono',monospace;font-weight:700;font-size:11px;letter-spacing:.16em;text-transform:uppercase;margin-top:18px}
+.map-wrap{position:relative;margin-top:12px;border-radius:16px;overflow:hidden;height:340px;box-shadow:0 10px 30px rgba(0,0,0,.18);background:#F1EFE8}
+.mapsvg{position:absolute;inset:0;width:100%;height:100%}
+.road-c{fill:none;stroke:#DAD6CA;stroke-width:7}
+.road{fill:none;stroke:#fff;stroke-width:3.5}
+.mstate{font-family:'Kumbh Sans',sans-serif;font-size:11px;letter-spacing:2.5px;fill:#A9B1A5;text-anchor:middle}
+.mroad{font-family:'Kumbh Sans',sans-serif;font-size:9px;fill:#9AA39B;text-anchor:middle}
+#pinLayer{position:absolute;inset:0;pointer-events:none}
+.pin{position:absolute;width:22px;height:22px;transform:translate(-50%,-100%);transition:opacity .3s ease,transform .3s ease}
+.pin i{display:block;width:100%;height:100%;background:var(--magenta);border:2.5px solid #000;border-radius:50% 50% 50% 0;transform:rotate(-45deg);box-shadow:0 3px 6px rgba(0,0,0,.3);position:relative}
+.pin i::after{content:'';position:absolute;inset:5px;background:#fff;border-radius:50%}
+.pin.dim{opacity:.3}
+.pin.active{transform:translate(-50%,-100%) scale(1.45);z-index:3}
+.map-pop{position:absolute;background:#fff;border-radius:12px;padding:12px 16px;box-shadow:0 8px 22px rgba(0,0,0,.25);transform:translate(-50%,-100%);min-width:180px;text-align:center;z-index:5}
+.map-pop::after{content:'';position:absolute;left:50%;bottom:-6px;width:13px;height:13px;background:#fff;transform:translateX(-50%) rotate(45deg)}
+.map-pop-name{font-family:'Jost',sans-serif;font-weight:700;font-size:16px;line-height:1.1}
+.map-pop-tag{font-family:'Space Mono',monospace;font-weight:700;font-size:9px;letter-spacing:.12em;margin-top:5px}
+.map-banner{position:absolute;left:12px;right:12px;bottom:36px;background:var(--yellow);border-radius:12px;padding:11px 14px;font-family:'Space Mono',monospace;font-weight:700;font-size:10px;letter-spacing:.12em;text-align:center;box-shadow:0 6px 14px rgba(0,0,0,.2);z-index:4}
+.map-attr{position:absolute;bottom:0;left:0;right:0;background:rgba(255,255,255,.92);font-family:'Space Mono',monospace;font-size:8px;letter-spacing:.1em;padding:6px 12px;z-index:4}
+.seal{position:absolute;font-family:'Space Mono',monospace;transform:rotate(8deg);filter:drop-shadow(0 6px 12px rgba(0,0,0,.25))}
+.seal svg{width:100%;height:100%;display:block}
+.seal-arc{font-family:'Space Mono',monospace;font-weight:700;font-size:11px;letter-spacing:3px;fill:#000}
+.seal-num{font-family:'Jost',sans-serif;font-weight:700;font-size:40px;fill:#000}
+.band{padding:18px 20px;font-family:'Space Mono',monospace;font-weight:700;font-size:15px;letter-spacing:.1em;text-align:center}
+.band-yellow{background:var(--yellow)}
+.band-tang{background:var(--tang)}
+.band-orange{background:var(--orange)}
+.band-black{background:#000;color:#fff}
+.how{background:#fff;padding:60px 20px 56px;position:relative}
+.how h2{font-size:30px;max-width:16ch}
+.sticker{position:absolute;font-family:'Space Mono',monospace;font-weight:700;box-shadow:0 6px 14px rgba(0,0,0,.22)}
+.step{display:flex;gap:18px;margin-top:28px;align-items:flex-start}
+.num{font-family:'Space Mono',monospace;font-weight:700;font-size:40px;line-height:.9;min-width:36px}
+.step p{font-size:16px;line-height:1.45;padding-top:7px}
+.closer{font-family:'Jost',sans-serif;font-weight:600;font-size:24px;margin-top:26px;text-align:center}
+.btn-cta5{margin-top:20px;min-height:58px;font-size:18px}
+.badge5-wrap{margin-top:32px;text-align:center}
+.badge5{display:inline-block;background:var(--lime);font-family:'Jost',sans-serif;font-weight:700;font-size:30px;line-height:1;letter-spacing:.01em;padding:16px 26px 18px;border-radius:16px;box-shadow:8px 9px 0 #000;transform:rotate(-6deg)}
+.fine{font-size:11px;margin-top:14px;text-align:center}
+.ingredients{background:var(--orange);padding:56px 20px}
+.ingredients h2,.tom h2{font-size:30px}
+.ingredients p,.tom .bio{font-size:16px;line-height:1.5;margin-top:14px;max-width:38ch}
+.food-wrap{position:relative;margin-top:30px}
+.ph{display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-weight:700;font-size:12px;letter-spacing:.14em;text-align:center;padding:12px}
+.food{background:var(--tang);height:260px;border-radius:16px}
+.sticker-vegan{top:-16px;left:14px;background:var(--cyan);padding:11px 15px;border-radius:12px;font-size:12px;letter-spacing:.08em;transform:rotate(-5deg)}
+.tom{background:var(--yellow);padding:56px 20px}
+.tom h2{margin-top:10px}
+.creator{background:var(--orange);width:100%;aspect-ratio:1;border-radius:16px;margin-top:26px}
+.urgency{background:#000;color:#fff;padding:52px 20px;text-align:center}
+.urgency .packshot-wrap{position:relative;max-width:300px;margin:0 auto 34px}
+.urgency .packshot{background:var(--tang);height:300px;border-radius:16px;color:#000}
+.urgency .seal{top:-24px;right:-10px;width:118px;height:118px}
+.urgency p{font-family:'Jost',sans-serif;font-weight:700;font-size:24px;line-height:1.2;max-width:20ch;margin:0 auto}
+.btn-inverse{background:#fff;color:#000;margin:24px auto 0;max-width:320px}
+.btn-inverse:focus-visible{outline-color:#fff}
+footer{background:var(--magenta);padding:46px 20px;text-align:center}
+.tm{font-family:'Jost',sans-serif;font-weight:700;font-size:25px;letter-spacing:-.01em}
+.handle{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.16em;margin-top:12px}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal,.fade,#step1,#result,.pin{transition:none}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="logo">coun+er</div>
+  <p class="eyebrow">COMING THIS AUGUST TO YOUR COSTCO CLUB</p>
+  <h1><span class="hl">Taco Mac &amp; Cheese</span> with 30g protein. Yes, really.</h1>
+  <p class="sub">Counter Taco Mac &amp; Cheese hits your Costco this August. Be the first to know and <span class="hl5">get $5 back</span> on your first box.</p>
+
+  <div class="card" id="zip-card">
+    <div id="step1">
+      <form id="zipForm" novalidate>
+        <p class="helper">We&rsquo;ll check the closest Costco club getting it first.</p>
+        <div class="field" id="f-zip">
+          <label class="lbl" for="zip">ZIP CODE</label>
+          <input id="zip" name="zip" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="5" autocomplete="postal-code" placeholder="30301">
+          <p class="err" id="zip-err">ENTER A 5-DIGIT ZIP CODE</p>
+        </div>
+        <button class="btn" type="submit">Check My Costco</button>
+      </form>
+    </div>
+
+    <div id="step2" class="fade" hidden aria-live="polite">
+      <div id="result">
+        <h2 id="r-head"></h2>
+        <p class="clubline" id="r-club"></p>
+        <form id="optForm" novalidate>
+          <p class="helper" id="r-intro"></p>
+          <div class="field" id="f-email">
+            <label class="lbl" for="email">EMAIL ADDRESS</label>
+            <input id="email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com">
+            <p class="err">ENTER A VALID EMAIL ADDRESS</p>
+          </div>
+          <div class="field" id="f-phone">
+            <label class="lbl" for="phone">PHONE NUMBER</label>
+            <div class="tel-wrap">
+              <span class="flag" aria-hidden="true">
+                <svg width="22" height="16" viewBox="0 0 22 16"><rect width="22" height="16" rx="2" fill="#fff"/><g fill="#FF422E"><rect y="0" width="22" height="2.3"/><rect y="4.6" width="22" height="2.3"/><rect y="9.2" width="22" height="2.3"/><rect y="13.7" width="22" height="2.3" rx="1"/></g><rect width="10" height="7" rx="1" fill="#000"/><rect width="22" height="16" rx="2" fill="none" stroke="#000" stroke-width="1"/></svg>
+                <svg width="10" height="6" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" fill="none" stroke="#000" stroke-width="1.6"/></svg>
+              </span>
+              <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required placeholder="(555) 555-0199">
+            </div>
+            <p class="err">ENTER A 10-DIGIT US PHONE NUMBER</p>
+            <p class="micro" id="r-micro">Your $5 pays out via Venmo or PayPal — your number helps us match it.</p>
+          </div>
+          <button class="btn" type="submit" id="r-btn"></button>
+          <p class="clar" id="r-clar"></p>
+        </form>
+      </div>
+      <div id="success" class="fade" hidden>
+        <h2 id="s-head"></h2>
+        <p class="clubline" id="s-sub"></p>
+        <p class="clubline" id="s-club"></p>
+        <p class="slist" id="s-final">We count the macros. You count the days.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="map-wrap" id="mapWrap">
+    <svg class="mapsvg" viewBox="0 0 400 320" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <rect width="400" height="320" fill="#F1EFE8"/>
+      <path d="M330 0 Q318 90 328 170 Q334 250 322 320 L400 320 L400 0 Z" fill="#C9E2ED"/>
+      <path d="M0 262 Q110 278 216 320 L0 320 Z" fill="#C9E2ED"/>
+      <ellipse cx="86" cy="66" rx="46" ry="20" fill="#DCEBCD"/>
+      <ellipse cx="166" cy="150" rx="34" ry="16" fill="#DCEBCD"/>
+      <ellipse cx="276" cy="98" rx="26" ry="13" fill="#DCEBCD"/>
+      <ellipse cx="228" cy="252" rx="28" ry="12" fill="#DCEBCD"/>
+      <path class="road-c" d="M138 0 Q190 118 216 198 Q234 258 240 320"/>
+      <path class="road" d="M138 0 Q190 118 216 198 Q234 258 240 320"/>
+      <path class="road-c" d="M296 6 Q312 118 310 198 Q308 258 314 320"/>
+      <path class="road" d="M296 6 Q312 118 310 198 Q308 258 314 320"/>
+      <path class="road-c" d="M196 166 Q280 156 400 162"/>
+      <path class="road" d="M196 166 Q280 156 400 162"/>
+      <text class="mstate" x="176" y="112">GEORGIA</text>
+      <text class="mstate" x="288" y="34">NORTH CAROLINA</text>
+      <text class="mstate" x="180" y="222">FLORIDA</text>
+      <text class="mroad" x="172" y="92">I-75</text>
+      <text class="mroad" x="322" y="150">I-95</text>
+    </svg>
+    <div id="pinLayer"></div>
+    <div class="map-pop" id="mapPop" hidden>
+      <p class="map-pop-name" id="popName"></p>
+      <p class="map-pop-tag" id="popTag"></p>
+    </div>
+    <div class="map-banner" id="mapBanner" hidden>WE&rsquo;RE STARTING IN THE SOUTHEAST</div>
+    <div class="map-attr">MAP PLACEHOLDER &middot; LIVE CLUB LOCATOR EMBEDS HERE</div>
+  </div>
+</section>
+
+<section class="macro">
+  <div class="band band-yellow reveal">+30G PROTEIN PER MEAL</div>
+  <div class="band band-tang reveal">+35G CARBS PER MEAL</div>
+  <div class="band band-orange reveal">+10G FAT PER MEAL</div>
+  <div class="band band-black reveal">350 CALORIES &middot; FOUR 10oz MEALS</div>
+</section>
+
+<section class="how">
+  <h2 class="reveal">Be first to get $5 back — while supplies last.</h2>
+  <div class="step reveal"><span class="num">1</span><p>Sign up — you&rsquo;re first in line.</p></div>
+  <div class="step reveal"><span class="num">2</span><p>Grab your box at Costco when it lands.</p></div>
+  <div class="step reveal"><span class="num">3</span><p>Snap your receipt. Get $5 via PayPal or Venmo.</p></div>
+  <div class="badge5-wrap reveal"><span class="badge5">GET $5 BACK</span></div>
+  <p class="closer reveal">That&rsquo;s it. No hoops.</p>
+  <button class="btn btn-cta5" type="button" data-scroll-zip>Keep Me Posted</button>
+  <p class="fine">Limited-time offer. Terms apply.</p>
+</section>
+
+<section class="ingredients">
+  <h2 class="reveal">It&rsquo;s what&rsquo;s inside that counts.</h2>
+  <p class="reveal">Real seasoned beef. Creamy queso made with real cottage cheese. Zero protein powder fillers.</p>
+  <div class="food-wrap reveal">
+    <div class="ph food">FOOD PHOTO PLACEHOLDER</div>
+    <div class="sticker sticker-vegan">100% NOT VEGAN&trade;</div>
+  </div>
+</section>
+
+<section class="tom">
+  <p class="eyebrow reveal">FROM THE ORIGINAL RECIPE HACKER</p>
+  <h2 class="reveal">Tom Walsh Approved.</h2>
+  <p class="bio reveal">Tom (@stealth_health_life) built an audience of millions by rebuilding the foods people actually crave — same plate, way more protein, macros that pull their weight. This Taco Mac is his recipe. Now it comes in a Costco-sized box.</p>
+  <div class="ph creator reveal">CREATOR PHOTO PLACEHOLDER</div>
+</section>
+
+<section class="urgency">
+  <div class="packshot-wrap reveal">
+    <div class="ph packshot">PACK SHOT PLACEHOLDER</div>
+    <div class="seal" role="img" aria-label="30g protein per meal">
+      <svg viewBox="-70 -70 140 140">
+<path d="M0.0 -54.0A16 16 0 0 1 27.0 -46.8A16 16 0 0 1 46.8 -27.0A16 16 0 0 1 54.0 0.0A16 16 0 0 1 46.8 27.0A16 16 0 0 1 27.0 46.8A16 16 0 0 1 0.0 54.0A16 16 0 0 1 -27.0 46.8A16 16 0 0 1 -46.8 27.0A16 16 0 0 1 -54.0 0.0A16 16 0 0 1 -46.8 -27.0A16 16 0 0 1 -27.0 -46.8A16 16 0 0 1 -0.0 -54.0Z" fill="#ADE830"/>
+<defs>
+<path id="pT" d="M-40 -10A41 41 0 0 1 40 -10"/>
+<path id="pB" d="M-42 8A43 43 0 0 0 42 8"/>
+</defs>
+<text class="seal-arc"><textPath href="#pT" startOffset="50%" text-anchor="middle">PROTEIN</textPath></text>
+<g transform="rotate(-6)"><text class="seal-num" y="15" text-anchor="middle">30g</text></g>
+<g stroke="#000" stroke-width="2.6" stroke-linecap="round" fill="none"><path d="M25 -16l5 -6"/><path d="M31 -10l7 -3"/><path d="M-26 23l22 3"/><path d="M-23 30l18 3"/></g>
+<text class="seal-arc"><textPath href="#pB" startOffset="50%" text-anchor="middle">PER MEAL</textPath></text>
+</svg>
+    </div>
+  </div>
+  <p class="reveal">This limited run doesn&rsquo;t restock. When the freezer&rsquo;s empty, it&rsquo;s over.</p>
+  <button class="btn btn-inverse" type="button" data-scroll-zip>Check My Costco</button>
+</section>
+
+<footer>
+  <p class="tm">Be better. Eat better.&trade;</p>
+  <p class="handle">@eatcounter &middot; eatcounter.com</p>
+</footer>
+
+<script>
+const PLACEHOLDER_CLUBS=[
+  {city:"Kennesaw (Atlanta)",state:"GA",zip3:301,mx:196,my:84},
+  {city:"Savannah",state:"GA",zip3:314,mx:262,my:128},
+  {city:"Tampa",state:"FL",zip3:336,mx:240,my:242},
+  {city:"Orlando",state:"FL",zip3:328,mx:272,my:216},
+  {city:"Jacksonville",state:"FL",zip3:322,mx:258,my:172},
+  {city:"Miami",state:"FL",zip3:331,mx:300,my:296},
+  {city:"Fort Myers",state:"FL",zip3:339,mx:258,my:276},
+  {city:"Charlotte",state:"NC",zip3:282,mx:282,my:74},
+  {city:"Raleigh",state:"NC",zip3:276,mx:322,my:58},
+  {city:"Greensboro",state:"NC",zip3:274,mx:300,my:42}
+];
+function findClub(zip){
+  const p2=zip.slice(0,2);
+  const z3=parseInt(zip.slice(0,3),10);
+  let state=null;
+  if(p2==="32"||p2==="33"||p2==="34")state="FL";
+  else if(p2==="30"||p2==="31")state="GA";
+  else if(p2==="27"||p2==="28")state="NC";
+  if(!state)return null;
+  let best=null,bd=Infinity;
+  for(const c of PLACEHOLDER_CLUBS){
+    if(c.state!==state)continue;
+    const d=Math.abs(c.zip3-z3);
+    if(d<bd){bd=d;best=c;}
+  }
+  return best;
+}
+const $=id=>document.getElementById(id);
+const MAP_W=400,MAP_H=320;
+let activeClub=null;
+function layoutMap(){
+  const wrap=$("mapWrap");
+  const cw=wrap.clientWidth,ch=wrap.clientHeight;
+  const s=Math.max(cw/MAP_W,ch/MAP_H),ox=(cw-MAP_W*s)/2,oy=(ch-MAP_H*s)/2;
+  document.querySelectorAll(".pin").forEach(p=>{
+    p.style.left=(p.dataset.mx*s+ox)+"px";
+    p.style.top=(p.dataset.my*s+oy)+"px";
+  });
+  const pop=$("mapPop");
+  if(!pop.hidden&&activeClub){
+    let x=activeClub.mx*s+ox,y=activeClub.my*s+oy;
+    x=Math.min(Math.max(x,100),cw-100);
+    pop.style.left=x+"px";
+    pop.style.top=(y-34)+"px";
+  }
+}
+function renderPins(){
+  const layer=$("pinLayer");
+  PLACEHOLDER_CLUBS.forEach(c=>{
+    const d=document.createElement("div");
+    d.className="pin";
+    d.dataset.mx=c.mx;d.dataset.my=c.my;d.dataset.city=c.city;
+    d.innerHTML="<i></i>";
+    layer.appendChild(d);
+  });
+}
+function focusMap(club,zip){
+  activeClub=club;
+  document.querySelectorAll(".pin").forEach(p=>{
+    p.classList.toggle("active",!!club&&p.dataset.city===club.city);
+    p.classList.toggle("dim",!!club&&p.dataset.city!==club.city);
+  });
+  $("mapBanner").hidden=!!club;
+  const pop=$("mapPop");
+  if(club){
+    $("popName").textContent="Costco "+club.city;
+    $("popTag").textContent="CLOSEST CLUB TO "+zip;
+    pop.hidden=false;
+  }else{
+    pop.hidden=true;
+  }
+  layoutMap();
+}
+const zipInput=$("zip"),emailInput=$("email"),phoneInput=$("phone");
+let matchedClub=null,inRegion=false;
+zipInput.addEventListener("input",e=>{e.target.value=e.target.value.replace(/\D/g,"").slice(0,5);});
+function validZip(){return /^\d{5}$/.test(zipInput.value);}
+function validEmail(){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value.trim());}
+function validPhone(){const d=phoneInput.value.replace(/\D/g,"");return d.length===10||(d.length===11&&d[0]==="1");}
+function mark(fieldId,ok){const f=$(fieldId);f.classList.toggle("bad",!ok);f.querySelector("input").setAttribute("aria-invalid",ok?"false":"true");}
+zipInput.addEventListener("blur",()=>{if(zipInput.value)mark("f-zip",validZip());});
+emailInput.addEventListener("blur",()=>{if(emailInput.value)mark("f-email",validEmail());});
+phoneInput.addEventListener("blur",()=>{if(phoneInput.value)mark("f-phone",validPhone());});
+function swap(hideEl,showEl){
+  hideEl.style.opacity="0";
+  setTimeout(()=>{
+    hideEl.hidden=true;
+    showEl.hidden=false;
+    void showEl.offsetWidth;
+    showEl.classList.add("show");
+  },240);
+}
+$("zipForm").addEventListener("submit",e=>{
+  e.preventDefault();
+  const ok=validZip();
+  mark("f-zip",ok);
+  if(!ok)return;
+  matchedClub=findClub(zipInput.value);
+  inRegion=!!matchedClub;
+  focusMap(matchedClub,zipInput.value);
+  if(inRegion){
+    $("r-head").textContent="It’s coming to your Costco this August.";
+    $("r-club").textContent="Closest club: Costco "+matchedClub.city+", "+matchedClub.state;
+    $("r-intro").hidden=false;
+    $("r-intro").textContent="Be first in line. We’ll email you the day it hits the freezer aisle — your $5 back will be waiting.";
+    $("r-micro").hidden=false;
+    $("r-btn").textContent="Count Me In — $5 Back";
+    $("r-clar").textContent="One email when it lands. No spam.";
+  }else{
+    $("r-head").textContent="We’re starting in the Southeast.";
+    $("r-club").textContent="Get on the list and we’ll tell you the moment your Costco is next.";
+    $("r-intro").hidden=true;
+    $("r-micro").hidden=true;
+    $("r-btn").textContent="Keep Me Posted";
+    $("r-clar").textContent="We’ll notify you when Taco Mac is in your Costco.";
+  }
+  swap($("step1"),$("step2"));
+});
+$("optForm").addEventListener("submit",e=>{
+  e.preventDefault();
+  const eOk=validEmail(),pOk=validPhone();
+  mark("f-email",eOk);
+  mark("f-phone",pOk);
+  if(!eOk||!pOk)return;
+  if(inRegion){
+    $("s-head").textContent="You’re on the list to get $5 back.";
+    $("s-sub").textContent="Check your email.";
+    $("s-club").hidden=false;
+    $("s-club").textContent="We’ll see you at Costco "+matchedClub.city+".";
+    $("s-final").hidden=false;
+  }else{
+    $("s-head").textContent="You’re on the list.";
+    $("s-sub").textContent="We’ll let you know the moment it’s headed your way.";
+    $("s-club").hidden=true;
+    $("s-final").hidden=true;
+  }
+  swap($("result"),$("success"));
+});
+document.querySelectorAll("[data-scroll-zip]").forEach(b=>b.addEventListener("click",()=>{
+  $("zip-card").scrollIntoView({behavior:"smooth",block:"center"});
+}));
+renderPins();
+layoutMap();
+window.addEventListener("resize",layoutMap);
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(en=>{if(en.isIntersecting){en.target.classList.add("in");io.unobserve(en.target);}});
+},{threshold:.12});
+document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
