@@ -8,37 +8,41 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@600;700&family=Kumbh+Sans:wght@400;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
+@font-face{font-family:'GT Flexa Mono';src:url(fonts/GTFlexaMono-Bold.woff2) format('woff2');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'Geograph';src:url(fonts/Geograph-Bold.woff2) format('woff2');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'Supreme';src:url(fonts/Supreme-Regular.woff2) format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Supreme';src:url(fonts/Supreme-Medium.woff2) format('woff2');font-weight:500;font-style:normal;font-display:swap}
 :root{--magenta:#FD21B2;--orange:#FF761C;--tang:#FFB21C;--yellow:#FFE500;--red:#FF422E;--lime:#ADE830;--cyan:#09EFEF}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:'Kumbh Sans',system-ui,sans-serif;color:#000;background:#fff;-webkit-font-smoothing:antialiased}
-h1,h2{font-family:'Jost',sans-serif;font-weight:700;line-height:1.05;letter-spacing:-.01em}
+body{font-family:'Supreme','Kumbh Sans',system-ui,sans-serif;color:#000;background:#fff;-webkit-font-smoothing:antialiased}
+h1,h2{font-family:'GT Flexa Mono','Space Mono',monospace;font-weight:700;line-height:.97;letter-spacing:-.05em}
 .hl{background:var(--yellow);padding:.04em .14em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
-.hl5{background:var(--lime);padding:.04em .14em;white-space:nowrap}
+.hl5{background:#fff;border:2px solid #000;border-radius:999px;padding:.08em .55em;white-space:nowrap;box-shadow:2px 3px 0 #000;font-family:'Geograph','Jost',sans-serif;font-weight:700}
 .wrap{max-width:1200px;margin:0 auto;padding:0 48px}
 .hero{background:var(--magenta);padding:44px 0 24px;position:relative}
-.eyebrow{font-family:'Space Mono',monospace;font-weight:700;font-size:13px;letter-spacing:.18em}
-.hero h1{font-size:clamp(38px,3.6vw,50px);margin-top:24px;max-width:18ch}
+.eyebrow{font-family:'Geograph','Jost',sans-serif;font-weight:700;font-size:13px;letter-spacing:.18em}
+.hero h1{font-size:clamp(44px,4.4vw,58px);margin-top:24px;max-width:17ch}
 .sub{font-size:17px;line-height:1.5;margin-top:24px;max-width:52ch}
-.bowl-hero{position:absolute;right:22%;top:84px;width:330px;z-index:6}
+.bowl-hero{position:absolute;right:20%;bottom:-30px;width:330px;z-index:6;filter:drop-shadow(4px 5px 0 rgba(0,0,0,.85))}
 .bowl-hero .bowl-img{width:100%;height:auto;display:block}
 .locator{background:#fff;padding:52px 0 72px}
 .locator-grid{display:grid;grid-template-columns:440px 1fr;gap:40px;align-items:start}
-.card{background:#fff;border:2px solid #000;border-radius:18px;padding:22px}
-.card-signup h2{font-size:26px;line-height:1.12}
+.card{background:#fff;border:2px solid #000;border-radius:18px;padding:22px;box-shadow:3px 4px 0 #000}
+.card-signup h2{font-size:30px}
 .card-signup .intro{margin:12px 0 16px}
 .helper{font-size:14px;line-height:1.4;margin-bottom:14px}
-.lbl{display:block;font-family:'Space Mono',monospace;font-weight:700;font-size:11px;letter-spacing:.16em;margin-bottom:6px}
-input{width:100%;min-height:52px;border:2px solid #000;border-radius:10px;padding:0 14px;font-family:'Space Mono',monospace;font-size:16px;background:#fff;color:#000}
+.lbl{display:block;font-family:'Geograph','Jost',sans-serif;font-weight:700;font-size:11px;letter-spacing:.16em;margin-bottom:6px}
+input{width:100%;min-height:52px;border:2px solid #000;border-radius:10px;padding:0 14px;font-family:'GT Flexa Mono','Space Mono',monospace;font-size:16px;background:#fff;color:#000}
 input::placeholder{color:rgba(0,0,0,.35)}
 input:focus-visible,.btn:focus-visible{outline:3px solid #000;outline-offset:2px}
 .field{margin-bottom:14px}
 .field.bad input{border-color:var(--red)}
-.err{display:none;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;margin-top:6px}
+.err{display:none;font-family:'Geograph','Jost',sans-serif;font-size:10px;letter-spacing:.08em;text-transform:uppercase;margin-top:6px}
 .field.bad .err{display:block}
-.btn{display:block;width:100%;min-height:54px;border:0;border-radius:999px;background:#000;color:#fff;font-family:'Jost',sans-serif;font-weight:700;font-size:17px;letter-spacing:.02em;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease}
-.btn:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(0,0,0,.25)}
-.clar{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;text-align:center;margin-top:12px}
+.btn{display:block;width:100%;min-height:54px;border:0;box-shadow:3px 4px 0 #000;border-radius:999px;background:#000;color:#fff;font-family:'Geograph','Jost',sans-serif;font-weight:700;font-size:17px;letter-spacing:.02em;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease}
+.btn:hover{transform:translate(1px,1px);box-shadow:2px 3px 0 #000}
+.clar{font-family:'Geograph','Jost',sans-serif;font-size:10px;letter-spacing:.14em;text-transform:uppercase;text-align:center;margin-top:12px}
 .tel-wrap{position:relative}
 .flag{position:absolute;left:14px;top:50%;transform:translateY(-50%);display:flex;align-items:center;gap:5px;pointer-events:none}
 .tel-wrap input{padding-left:62px}
@@ -47,7 +51,7 @@ input:focus-visible,.btn:focus-visible{outline:3px solid #000;outline-offset:2px
 .zip-row{display:grid;grid-template-columns:1fr auto;gap:14px;align-items:end}
 .zip-row .field{margin-bottom:0}
 .btn-zip{width:auto;padding:0 30px}
-.map-wrap{position:relative;margin-top:18px;border-radius:18px;overflow:hidden;height:470px;border:2px solid #000;background:#F1EFE8}
+.map-wrap{position:relative;margin-top:18px;border-radius:18px;overflow:hidden;height:470px;border:2px solid #000;background:#F1EFE8;box-shadow:3px 4px 0 #000}
 .mapsvg{position:absolute;inset:0;width:100%;height:100%}
 .road-c{fill:none;stroke:#DAD6CA;stroke-width:7}
 .road{fill:none;stroke:#fff;stroke-width:3.5}
@@ -55,34 +59,35 @@ input:focus-visible,.btn:focus-visible{outline:3px solid #000;outline-offset:2px
 .mroad{font-family:'Kumbh Sans',sans-serif;font-size:9px;fill:#9AA39B;text-anchor:middle}
 #pinLayer{position:absolute;inset:0;pointer-events:none}
 .pin{position:absolute;width:24px;height:24px;transform:translate(-50%,-100%);transition:opacity .3s ease,transform .3s ease}
-.pin i{display:block;width:100%;height:100%;background:var(--magenta);border:2.5px solid #000;border-radius:50% 50% 50% 0;transform:rotate(-45deg);box-shadow:0 3px 6px rgba(0,0,0,.3);position:relative}
+.pin i{display:block;width:100%;height:100%;background:var(--magenta);border:2.5px solid #000;border-radius:50% 50% 50% 0;transform:rotate(-45deg);box-shadow:2px 3px 0 #000;position:relative}
 .pin i::after{content:'';position:absolute;inset:6px;background:#fff;border-radius:50%}
 .pin.dim{opacity:.3}
 .pin.active{transform:translate(-50%,-100%) scale(1.45);z-index:3}
-.map-pop{position:absolute;background:#fff;border-radius:12px;padding:14px 18px;box-shadow:0 8px 22px rgba(0,0,0,.25);transform:translate(-50%,-100%);min-width:200px;text-align:center;z-index:5}
+.map-pop{position:absolute;background:#fff;border-radius:12px;padding:14px 18px;box-shadow:3px 4px 0 #000;transform:translate(-50%,-100%);min-width:200px;text-align:center;z-index:5}
 .map-pop::after{content:'';position:absolute;left:50%;bottom:-6px;width:13px;height:13px;background:#fff;transform:translateX(-50%) rotate(45deg)}
-.map-pop-name{font-family:'Jost',sans-serif;font-weight:700;font-size:18px;line-height:1.1}
-.map-pop-tag{font-family:'Space Mono',monospace;font-weight:700;font-size:10px;letter-spacing:.12em;margin-top:5px}
-.map-banner{position:absolute;left:16px;right:16px;bottom:44px;background:var(--yellow);border-radius:12px;padding:13px 16px;font-family:'Space Mono',monospace;font-weight:700;font-size:11px;letter-spacing:.12em;text-align:center;box-shadow:0 6px 14px rgba(0,0,0,.2);z-index:4}
-.map-attr{position:absolute;bottom:0;left:0;right:0;background:rgba(255,255,255,.92);font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.1em;padding:7px 14px;z-index:4}
+.map-pop-name{font-family:'Geograph','Jost',sans-serif;font-weight:700;font-size:18px;line-height:1.1}
+.map-pop-tag{font-family:'Geograph','Jost',sans-serif;font-weight:700;font-size:10px;letter-spacing:.12em;margin-top:5px}
+.map-banner{position:absolute;left:16px;right:16px;bottom:44px;background:var(--yellow);border-radius:12px;padding:13px 16px;font-family:'Geograph','Jost',sans-serif;font-weight:700;font-size:11px;letter-spacing:.12em;text-align:center;box-shadow:3px 4px 0 #000;z-index:4}
+.map-attr{position:absolute;bottom:0;left:0;right:0;background:rgba(255,255,255,.92);font-family:'Geograph','Jost',sans-serif;font-size:9px;letter-spacing:.1em;padding:7px 14px;z-index:4}
 .clubline{font-size:14px;line-height:1.5;margin-top:8px}
 .fade{opacity:0;transform:translateY(12px);transition:opacity .45s ease,transform .45s ease}
 .fade.show{opacity:1;transform:none}
 #result{transition:opacity .24s ease}
-.slist{font-family:'Space Mono',monospace;font-weight:700;font-size:11px;letter-spacing:.16em;text-transform:uppercase;margin-top:18px}
-.seal{position:absolute;filter:drop-shadow(0 6px 12px rgba(0,0,0,.25))}
+.slist{font-family:'Geograph','Jost',sans-serif;font-weight:700;font-size:11px;letter-spacing:.16em;text-transform:uppercase;margin-top:18px}
+.seal{position:absolute;filter:drop-shadow(3px 4px 0 rgba(0,0,0,.85))}
 .seal svg{width:100%;height:100%;display:block}
-.seal-arc{font-family:'Space Mono',monospace;font-weight:700;font-size:11px;letter-spacing:3px;fill:#000}
-.seal-num{font-family:'Jost',sans-serif;font-weight:700;font-size:46px;fill:#000}
-.band{padding:24px 20px;font-family:'Space Mono',monospace;font-weight:700;font-size:20px;letter-spacing:.12em;text-align:center}
+.seal-arc{font-family:'GT Flexa Mono','Space Mono',monospace;font-weight:700;font-size:11px;letter-spacing:3px;fill:#000}
+.seal-num{font-family:'Geograph','Jost',sans-serif;font-weight:700;font-size:46px;fill:#000}
+.band{padding:14px 20px;font-family:'GT Flexa Mono','Space Mono',monospace;font-weight:700;font-size:20px;letter-spacing:.12em;text-align:center}
+.stat-pill{display:inline-block;background:var(--yellow);border:2px solid #000;border-radius:14px;padding:12px 22px;box-shadow:3px 4px 0 #000}
 .band-yellow{background:var(--yellow)}
 .band-tang{background:var(--tang)}
 .band-orange{background:var(--orange)}
 .band-black{background:#000;color:#fff}
 .how{background:#fff;padding:88px 0 80px}
 .how .wrap{position:relative}
-.how h2{font-size:40px;max-width:22ch}
-.sticker{position:absolute;font-family:'Space Mono',monospace;font-weight:700;box-shadow:0 6px 14px rgba(0,0,0,.22)}
+.how h2{font-size:46px;max-width:22ch}
+.sticker{position:absolute;font-family:'GT Flexa Mono','Space Mono',monospace;font-weight:700;box-shadow:3px 4px 0 #000}
 .how-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:80px;margin-top:44px;align-items:start}
 .steps-col .step{display:flex;gap:20px;align-items:flex-start;margin-top:26px}
 .steps-col .step:first-child{margin-top:0}
@@ -90,32 +95,33 @@ input:focus-visible,.btn:focus-visible{outline:3px solid #000;outline-offset:2px
 .how-cta{align-self:start;text-align:center;margin-top:-28px}
 .how-cta .closer{margin-top:24px;font-size:32px}
 .badge5-wrap{margin-bottom:0}
-.badge5{display:inline-block;background:var(--lime);font-family:'Jost',sans-serif;font-weight:700;font-size:42px;line-height:1;letter-spacing:.01em;padding:20px 34px 22px;border-radius:20px;box-shadow:10px 11px 0 #000;transform:rotate(-6deg)}
-.num{font-family:'Space Mono',monospace;font-weight:700;font-size:56px;line-height:.9;display:block}
+.badge5{display:inline-block;background:#fff;border:2.5px solid #000;font-family:'Geograph','Jost',sans-serif;font-weight:700;font-size:42px;line-height:1;letter-spacing:.01em;padding:20px 34px 22px;border-radius:999px;box-shadow:3px 4px 0 #000;transform:rotate(-6deg)}
+.num{font-family:'GT Flexa Mono','Space Mono',monospace;font-weight:700;font-size:56px;line-height:.9;display:block}
 .step p{font-size:17px;line-height:1.5;margin-top:14px;max-width:26ch}
-.closer{font-family:'Jost',sans-serif;font-weight:600;font-size:22px;margin-top:48px}
+.closer{font-family:'Geograph','Jost',sans-serif;font-weight:600;font-size:22px;margin-top:48px}
+.btn-offer{background:#fff;color:#000;border:2.5px solid #000}
 .btn-cta5{margin-top:20px;width:auto;display:inline-block;padding:0 56px;line-height:62px;min-height:62px;font-size:20px}
 .fine{font-size:11px;margin-top:12px}
 .ingredients{background:var(--orange);padding:88px 0}
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
-.ingredients h2,.tom h2{font-size:40px}
+.ingredients h2,.tom h2{font-size:46px}
 .ingredients .body,.tom .bio{font-size:17px;line-height:1.55;margin-top:16px;max-width:42ch}
-.ph{display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-weight:700;font-size:13px;letter-spacing:.14em;text-align:center;padding:12px}
+.ph{display:flex;align-items:center;justify-content:center;font-family:'GT Flexa Mono','Space Mono',monospace;font-weight:700;font-size:13px;letter-spacing:.14em;text-align:center;padding:12px}
 .food-wrap{position:relative}
-.food{width:100%;height:400px;object-fit:cover;border-radius:20px;display:block}
+.food{width:100%;height:400px;object-fit:cover;border-radius:20px;display:block;box-shadow:3px 4px 0 #000}
 .sticker-vegan{top:-20px;left:-14px;background:var(--cyan);padding:13px 18px;border-radius:12px;font-size:14px;letter-spacing:.08em;transform:rotate(-5deg)}
 .tom{background:var(--yellow);padding:88px 0}
 .tom h2{margin-top:12px}
-.creator{width:100%;aspect-ratio:1;object-fit:cover;border-radius:20px;display:block}
+.creator{width:100%;aspect-ratio:1;object-fit:cover;border-radius:20px;display:block;box-shadow:3px 4px 0 #000}
 .urgency{background:#000;color:#fff;padding:76px 0;text-align:center}
 .urgency .packshot-wrap{position:relative;max-width:380px;margin:0 auto 40px}
-.urgency .packshot{width:100%;height:auto;border-radius:20px;display:block}
-.urgency p{font-family:'Jost',sans-serif;font-weight:700;font-size:34px;line-height:1.15;max-width:24ch;margin:0 auto}
+.urgency .packshot{width:100%;height:auto;border-radius:20px;display:block;box-shadow:3px 4px 0 #000}
+.urgency p{font-family:'Geograph','Jost',sans-serif;font-weight:700;font-size:34px;line-height:1.15;max-width:24ch;margin:0 auto}
 .btn-inverse{background:#fff;color:#000;margin:30px auto 0;width:auto;padding:0 44px;display:inline-block;line-height:54px}
 .btn-inverse:focus-visible{outline-color:#fff}
 footer{background:var(--magenta);padding:64px 0;text-align:center}
-.tm{font-family:'Jost',sans-serif;font-weight:700;font-size:34px;letter-spacing:-.01em}
-.handle{font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.16em;margin-top:14px}
+.tm{font-family:'GT Flexa Mono','Space Mono',monospace;font-weight:700;font-size:39px;letter-spacing:-.05em;line-height:.97}
+.handle{font-family:'Geograph','Jost',sans-serif;font-size:12px;letter-spacing:.16em;margin-top:14px}
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
 .reveal.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal,.fade,#result,.pin{transition:none}.reveal{opacity:1;transform:none}}
@@ -126,7 +132,7 @@ footer{background:var(--magenta);padding:64px 0;text-align:center}
 <section class="hero">
   <div class="wrap">
     <p class="eyebrow">COMING THIS AUGUST TO YOUR COSTCO CLUB</p>
-    <h1><span class="hl">Taco Mac &amp; Cheese</span> with 30g protein. Yes, really.</h1>
+    <h1><span class="hl">Taco Mac &amp; Cheese</span> With 30g Protein. Yes, Really.</h1>
     <p class="sub">Counter Taco Mac &amp; Cheese hits your Costco this August. Be the first to know and <span class="hl5">get $5 back</span> on your first box.</p>
   </div>
   <div class="bowl-hero" role="img" aria-label="Bowl of Counter Taco Mac and Cheese">
@@ -138,7 +144,7 @@ footer{background:var(--magenta);padding:64px 0;text-align:center}
   <div class="wrap locator-grid">
     <div class="card card-signup" id="signup-card" aria-live="polite">
       <div id="result">
-        <h2>Get $5 back on your first box.</h2>
+        <h2>Get $5 Back on Your First Box.</h2>
         <p class="helper intro">Be first in line. We&rsquo;ll email you the day it hits the freezer aisle — your $5 back will be waiting.</p>
         <form id="optForm" novalidate>
           <div class="field" id="f-email">
@@ -158,11 +164,11 @@ footer{background:var(--magenta);padding:64px 0;text-align:center}
             <p class="err">ENTER A 10-DIGIT US PHONE NUMBER</p>
             <p class="micro">Your $5 pays out via Venmo or PayPal.</p>
           </div>
-          <button class="btn" type="submit">Count Me In — $5 Back</button>
+          <button class="btn btn-offer" type="submit">Count Me In — $5 Back</button>
         </form>
       </div>
       <div id="success" class="fade" hidden>
-        <h2>You&rsquo;re on the list to get $5 back.</h2>
+        <h2>You&rsquo;re on the List to Get $5 Back.</h2>
         <p class="clubline">Check your email.</p>
         <p class="clubline" id="s-club" hidden></p>
         <p class="slist">We count the macros. You count the days.</p>
@@ -217,15 +223,15 @@ footer{background:var(--magenta);padding:64px 0;text-align:center}
 </section>
 
 <section class="macro">
-  <div class="band band-yellow reveal">+30G PROTEIN PER MEAL</div>
-  <div class="band band-tang reveal">+35G CARBS PER MEAL</div>
-  <div class="band band-orange reveal">+10G FAT PER MEAL</div>
+  <div class="band band-yellow reveal"><span class="stat-pill">+30g PROTEIN PER MEAL</span></div>
+  <div class="band band-tang reveal"><span class="stat-pill">+35g CARBS PER MEAL</span></div>
+  <div class="band band-orange reveal"><span class="stat-pill">+10g FAT PER MEAL</span></div>
   <div class="band band-black reveal">350 CALORIES &middot; FOUR 10oz MEALS</div>
 </section>
 
 <section class="how">
   <div class="wrap">
-    <h2 class="reveal">Be first to get $5 back — while supplies last.</h2>
+    <h2 class="reveal">Be First to Get $5 Back — While Supplies Last.</h2>
     <div class="how-grid">
       <div class="steps-col">
         <div class="step reveal"><span class="num">1</span><p>Sign up — you&rsquo;re first in line.</p></div>
@@ -235,7 +241,7 @@ footer{background:var(--magenta);padding:64px 0;text-align:center}
       <div class="how-cta reveal">
         <div class="badge5-wrap"><span class="badge5">GET $5 BACK</span></div>
         <p class="closer">That&rsquo;s it. No hoops.</p>
-        <button class="btn btn-cta5" type="button" data-scroll-zip>Keep Me Posted</button>
+        <button class="btn btn-offer btn-cta5" type="button" data-scroll-zip>Keep Me Posted</button>
         <p class="fine">Limited-time offer. Terms apply.</p>
       </div>
     </div>
@@ -245,7 +251,7 @@ footer{background:var(--magenta);padding:64px 0;text-align:center}
 <section class="ingredients">
   <div class="wrap two-col">
     <div>
-      <h2 class="reveal">It&rsquo;s what&rsquo;s inside that counts.</h2>
+      <h2 class="reveal">It&rsquo;s What&rsquo;s Inside That Counts.</h2>
       <p class="body reveal">Real seasoned beef. Creamy queso made with real cottage cheese. Zero protein powder fillers.</p>
     </div>
     <div class="food-wrap reveal">
