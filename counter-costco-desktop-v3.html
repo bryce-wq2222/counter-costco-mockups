@@ -6,7 +6,7 @@
 <title>Taco Mac &amp; Cheese is Coming to Costco — Counter</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Jost:wght@600;700&family=Kumbh+Sans:wght@400;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@700&family=Jost:wght@600;700&family=Kumbh+Sans:wght@400;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
 @font-face{font-family:'GT Flexa Mono';src:url(fonts/GTFlexaMono-Bold.woff2) format('woff2');font-weight:700;font-style:normal;font-display:swap}
 @font-face{font-family:'Geograph';src:url(fonts/Geograph-Bold.woff2) format('woff2');font-weight:700;font-style:normal;font-display:swap}
@@ -16,7 +16,7 @@
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{font-family:'Supreme','Kumbh Sans',system-ui,sans-serif;color:#000;background:#fff;-webkit-font-smoothing:antialiased}
-h1,h2{font-family:'GT Flexa Mono','Space Mono',monospace;font-weight:700;line-height:.97;letter-spacing:-.05em}
+h1,h2{font-family:'GT Flexa Mono','Courier Prime','Space Mono',monospace;font-weight:700;line-height:.97;letter-spacing:-.05em}
 .hl{background:var(--yellow);padding:.04em .14em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
 .hl5{background:#fff;border:2px solid #000;border-radius:999px;padding:.08em .55em;white-space:nowrap;box-shadow:2px 3px 0 #000;font-family:'Geograph','Jost',sans-serif;font-weight:700}
 .wrap{max-width:1200px;margin:0 auto;padding:0 48px}
@@ -24,7 +24,7 @@ h1,h2{font-family:'GT Flexa Mono','Space Mono',monospace;font-weight:700;line-he
 .eyebrow{font-family:'Geograph','Jost',sans-serif;font-weight:700;font-size:13px;letter-spacing:.18em}
 .hero h1{font-size:clamp(44px,4.4vw,58px);margin-top:24px;max-width:17ch}
 .sub{font-size:17px;line-height:1.5;margin-top:24px;max-width:52ch}
-.bowl-hero{position:absolute;right:20%;bottom:-30px;width:330px;z-index:6;filter:drop-shadow(4px 5px 0 rgba(0,0,0,.85))}
+.bowl-hero{position:absolute;right:max(48px,calc((100% - 1104px)/2));bottom:-30px;width:380px;z-index:6;filter:drop-shadow(4px 5px 0 rgba(0,0,0,.85))}
 .bowl-hero .bowl-img{width:100%;height:auto;display:block}
 .locator{background:#fff;padding:52px 0 72px}
 .locator-grid{display:grid;grid-template-columns:440px 1fr;gap:40px;align-items:start}
@@ -33,7 +33,7 @@ h1,h2{font-family:'GT Flexa Mono','Space Mono',monospace;font-weight:700;line-he
 .card-signup .intro{margin:12px 0 16px}
 .helper{font-size:14px;line-height:1.4;margin-bottom:14px}
 .lbl{display:block;font-family:'Geograph','Jost',sans-serif;font-weight:700;font-size:11px;letter-spacing:.16em;margin-bottom:6px}
-input{width:100%;min-height:52px;border:2px solid #000;border-radius:10px;padding:0 14px;font-family:'GT Flexa Mono','Space Mono',monospace;font-size:16px;background:#fff;color:#000}
+input{width:100%;min-height:52px;border:2px solid #000;border-radius:10px;padding:0 14px;font-family:'GT Flexa Mono','Courier Prime','Space Mono',monospace;font-size:16px;background:#fff;color:#000}
 input::placeholder{color:rgba(0,0,0,.35)}
 input:focus-visible,.btn:focus-visible{outline:3px solid #000;outline-offset:2px}
 .field{margin-bottom:14px}
@@ -76,9 +76,9 @@ input:focus-visible,.btn:focus-visible{outline:3px solid #000;outline-offset:2px
 .slist{font-family:'Geograph','Jost',sans-serif;font-weight:700;font-size:11px;letter-spacing:.16em;text-transform:uppercase;margin-top:18px}
 .seal{position:absolute;filter:drop-shadow(3px 4px 0 rgba(0,0,0,.85))}
 .seal svg{width:100%;height:100%;display:block}
-.seal-arc{font-family:'GT Flexa Mono','Space Mono',monospace;font-weight:700;font-size:11px;letter-spacing:3px;fill:#000}
+.seal-arc{font-family:'GT Flexa Mono','Courier Prime','Space Mono',monospace;font-weight:700;font-size:11px;letter-spacing:3px;fill:#000}
 .seal-num{font-family:'Geograph','Jost',sans-serif;font-weight:700;font-size:46px;fill:#000}
-.band{padding:14px 20px;font-family:'GT Flexa Mono','Space Mono',monospace;font-weight:700;font-size:20px;letter-spacing:.12em;text-align:center}
+.band{padding:14px 20px;font-family:'GT Flexa Mono','Courier Prime','Space Mono',monospace;font-weight:700;font-size:20px;letter-spacing:.12em;text-align:center}
 .stat-pill{display:inline-block;background:var(--yellow);border:2px solid #000;border-radius:14px;padding:12px 22px;box-shadow:3px 4px 0 #000}
 .band-yellow{background:var(--yellow)}
 .band-tang{background:var(--tang)}
@@ -87,7 +87,7 @@ input:focus-visible,.btn:focus-visible{outline:3px solid #000;outline-offset:2px
 .how{background:#fff;padding:88px 0 80px}
 .how .wrap{position:relative}
 .how h2{font-size:46px;max-width:22ch}
-.sticker{position:absolute;font-family:'GT Flexa Mono','Space Mono',monospace;font-weight:700;box-shadow:3px 4px 0 #000}
+.sticker{position:absolute;font-family:'GT Flexa Mono','Courier Prime','Space Mono',monospace;font-weight:700;box-shadow:3px 4px 0 #000}
 .how-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:80px;margin-top:44px;align-items:start}
 .steps-col .step{display:flex;gap:20px;align-items:flex-start;margin-top:26px}
 .steps-col .step:first-child{margin-top:0}
@@ -96,17 +96,17 @@ input:focus-visible,.btn:focus-visible{outline:3px solid #000;outline-offset:2px
 .how-cta .closer{margin-top:24px;font-size:32px}
 .badge5-wrap{margin-bottom:0}
 .badge5{display:inline-block;background:#fff;border:2.5px solid #000;font-family:'Geograph','Jost',sans-serif;font-weight:700;font-size:42px;line-height:1;letter-spacing:.01em;padding:20px 34px 22px;border-radius:999px;box-shadow:3px 4px 0 #000;transform:rotate(-6deg)}
-.num{font-family:'GT Flexa Mono','Space Mono',monospace;font-weight:700;font-size:56px;line-height:.9;display:block}
+.num{font-family:'GT Flexa Mono','Courier Prime','Space Mono',monospace;font-weight:700;font-size:56px;line-height:.9;display:block}
 .step p{font-size:17px;line-height:1.5;margin-top:14px;max-width:26ch}
 .closer{font-family:'Geograph','Jost',sans-serif;font-weight:600;font-size:22px;margin-top:48px}
 .btn-offer{background:#fff;color:#000;border:2.5px solid #000}
-.btn-cta5{margin-top:20px;width:auto;display:inline-block;padding:0 56px;line-height:62px;min-height:62px;font-size:20px}
+.btn-cta5{margin-top:20px;width:auto;display:inline-block;padding:0 56px;line-height:62px;min-height:62px;font-size:20px;background:var(--yellow);color:#000;border:2.5px solid #000}
 .fine{font-size:11px;margin-top:12px}
 .ingredients{background:var(--orange);padding:88px 0}
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
 .ingredients h2,.tom h2{font-size:46px}
 .ingredients .body,.tom .bio{font-size:17px;line-height:1.55;margin-top:16px;max-width:42ch}
-.ph{display:flex;align-items:center;justify-content:center;font-family:'GT Flexa Mono','Space Mono',monospace;font-weight:700;font-size:13px;letter-spacing:.14em;text-align:center;padding:12px}
+.ph{display:flex;align-items:center;justify-content:center;font-family:'GT Flexa Mono','Courier Prime','Space Mono',monospace;font-weight:700;font-size:13px;letter-spacing:.14em;text-align:center;padding:12px}
 .food-wrap{position:relative}
 .food{width:100%;height:400px;object-fit:cover;border-radius:20px;display:block;box-shadow:3px 4px 0 #000}
 .sticker-vegan{top:-20px;left:-14px;background:var(--cyan);padding:13px 18px;border-radius:12px;font-size:14px;letter-spacing:.08em;transform:rotate(-5deg)}
@@ -120,7 +120,7 @@ input:focus-visible,.btn:focus-visible{outline:3px solid #000;outline-offset:2px
 .btn-inverse{background:#fff;color:#000;margin:30px auto 0;width:auto;padding:0 44px;display:inline-block;line-height:54px}
 .btn-inverse:focus-visible{outline-color:#fff}
 footer{background:var(--magenta);padding:64px 0;text-align:center}
-.tm{font-family:'GT Flexa Mono','Space Mono',monospace;font-weight:700;font-size:39px;letter-spacing:-.05em;line-height:.97}
+.tm{font-family:'GT Flexa Mono','Courier Prime','Space Mono',monospace;font-weight:700;font-size:39px;letter-spacing:-.05em;line-height:.97}
 .handle{font-family:'Geograph','Jost',sans-serif;font-size:12px;letter-spacing:.16em;margin-top:14px}
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
 .reveal.in{opacity:1;transform:none}
