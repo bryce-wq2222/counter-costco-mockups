@@ -87,21 +87,21 @@ input:focus-visible,.btn:focus-visible{outline:3px solid #000;outline-offset:2px
 .band-black{background:#000;color:#fff}
 .how{background:#fff;padding:88px 0 80px}
 .how .wrap{position:relative}
-.how h2{font-size:46px;max-width:22ch}
+.how h2{font-size:46px;max-width:22ch;margin-bottom:18px}
 .sticker{position:absolute;font-family:'GT Flexa Mono','Courier Prime','Space Mono',monospace;font-weight:700;box-shadow:3px 4px 0 #000}
-.how-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:80px;margin-top:44px;align-items:start}
+.how-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:80px;align-items:stretch}
 .steps-col .step{display:flex;gap:20px;align-items:flex-start;margin-top:26px}
 .steps-col .step:first-child{margin-top:0}
 .steps-col .step p{margin-top:0;padding-top:8px}
-.how-cta{align-self:start;text-align:center;margin-top:-28px}
-.how-cta .closer{margin-top:24px;font-size:32px}
+.how-cta{display:flex;flex-direction:column;align-items:center;justify-content:space-between;text-align:center}
+.how-cta .closer{margin-top:16px;font-size:32px}
 .badge5-wrap{margin-bottom:0}
 .badge5{display:inline-block;background:#fff;border:2.5px solid #000;font-family:'Geograph','Jost',sans-serif;font-weight:700;font-size:42px;line-height:1;letter-spacing:.01em;padding:20px 34px 22px;border-radius:999px;box-shadow:3px 4px 0 #000;transform:rotate(-6deg)}
 .num{font-family:'GT Flexa Mono','Courier Prime','Space Mono',monospace;font-weight:700;font-size:56px;line-height:.9;display:block}
 .step p{font-size:17px;line-height:1.5;margin-top:14px;max-width:26ch}
 .closer{font-family:'Geograph','Jost',sans-serif;font-weight:600;font-size:22px;margin-top:48px}
 .btn-offer{background:#fff;color:#000;border:2.5px solid #000}
-.btn-cta5{margin-top:20px;width:auto;display:inline-block;padding:0 56px;line-height:62px;min-height:62px;font-size:20px;background:var(--yellow);color:#000;border:2.5px solid #000}
+.btn-cta5{margin-top:0;width:auto;display:inline-block;padding:0 56px;line-height:62px;min-height:62px;font-size:20px;background:var(--yellow);color:#000;border:2.5px solid #000}
 .fine{font-size:11px;margin-top:12px}
 .ingredients{background:var(--orange);padding:88px 0}
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
@@ -232,9 +232,9 @@ footer{background:var(--magenta);padding:64px 0;text-align:center}
 
 <section class="how">
   <div class="wrap">
-    <h2 class="reveal">Be First to Get $5 Back — While Supplies Last.</h2>
     <div class="how-grid">
       <div class="steps-col">
+        <h2 class="reveal">Be First to Get $5 Back — While Supplies Last.</h2>
         <div class="step reveal"><span class="num">1</span><p>Sign up — you&rsquo;re first in line.</p></div>
         <div class="step reveal"><span class="num">2</span><p>Grab your box at Costco when it lands.</p></div>
         <div class="step reveal"><span class="num">3</span><p>Snap your receipt. Get $5 via PayPal or Venmo.</p></div>
@@ -242,8 +242,10 @@ footer{background:var(--magenta);padding:64px 0;text-align:center}
       <div class="how-cta reveal">
         <div class="badge5-wrap"><span class="badge5">GET $5 BACK</span></div>
         <p class="closer">That&rsquo;s it. No hoops.</p>
-        <button class="btn btn-offer btn-cta5" type="button" data-scroll-zip>Keep Me Posted</button>
-        <p class="fine">Limited-time offer. Terms apply.</p>
+        <div class="cta-end">
+          <button class="btn btn-offer btn-cta5" type="button" data-scroll-zip>Keep Me Posted</button>
+          <p class="fine">Limited-time offer. Terms apply.</p>
+        </div>
       </div>
     </div>
   </div>
